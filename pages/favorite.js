@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
-import Layout from "../components/layout";
 import { useSession } from "next-auth/react";
-import { useRouter } from "next/router";
 import Image from "next/image";
-import woman7a from "../public/images/woman7a.png";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { BsHeartFill } from "react-icons/bs";
-import Meaning from "../components/Meaning";
 import Navbar from "../components/Navbar";
 
 const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
@@ -57,7 +54,7 @@ const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
                   >
                     <div className="flex items-center space-x-4">
                       <div className="flex-shrink-0">
-                        <img
+                        <Image
                           className="w-8 h-8 rounded-full"
                           // src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
                           src="/images/newbg35.jpg"
@@ -96,6 +93,5 @@ const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
     </div>
   );
 };
-
 
 export default Favorite;

@@ -15,7 +15,7 @@ const Landingpage = ({ sidebarOpen, setSidebarOpen }) => {
   return (
     <div className={`${sidebarOpen ? "ml-48" : "ml-20"} duration-300`}>
       <div>
-      <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+        <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
       </div>
       <Search setWord={setWord} />
       <div
@@ -31,7 +31,7 @@ const Landingpage = ({ sidebarOpen, setSidebarOpen }) => {
         </div>
 
         <div className=" mt-32 ">
-          <Image src="/images/bookBg1n.png" width={300} height={200} />
+          <Image src="/images/bookBg1n.png" alt="" width={300} height={200} />
         </div>
       </div>
     </div>
