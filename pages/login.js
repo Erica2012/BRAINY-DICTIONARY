@@ -39,46 +39,48 @@ const Login = () => {
   return (
     <div>
       <div
-        className="relative w-full h-screen bg-cover bg-no-repeat  "
+        className="relative w-full h-screen bg-cover  bg-no-repeat  "
         style={{
           backgroundImage: `url(${newbg1.src})`,
         }}
       >
-        <div className="grid grid-col-1 md:grid-cols-2 m-auto h-[550px] shadow-lg shadow-violet-500 bg-transparent sm:max-w-[900px] ">
-          <div className="hidden md:block bg-transparent">
+        <div className="grid grid-col-1 rounded-3xl rounded-tl-none  md:grid-cols-2 m-auto h-auto justify-center  shadow-lg shadow-violet-500 bg-transparent sm:max-w-[900px] ">
+          <div className="hidden mt-7 md:block bg-transparent">
             <Image src="/images/logn.png" alt="" width={600} height={600} />
           </div>
-          <div className="p-4 flex flex-col justify-center border shadow-sm mt-3 bg-white ">
-            <form onSubmit={handleSubmit}>
+          <div className="p-2 mt-6 flex flex-col rounded-r-3xl    border shadow-sm  bg-white ">
+            <form onSubmit={handleSubmit} className="mt-5">
               {error && <p>{error}</p>}
-              <h2 className="text-4xl font-bold text-center mb-8 text-gray-500">
+              <h2 className="text-4xl font-bold text-center mb-8 text-yellow-500">
                 Login
               </h2>
-              <div>
-                <input
-                  className=" p-2 outline-none"
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  value={data.email}
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <input
-                  className=" p-2 outline-none"
-                  type="password"
-                  placeholder="password"
-                  name="password"
-                  value={data.password}
-                  onChange={handleChange}
-                />
+              <div className="space-y-5">
+                <div>
+                  <input
+                    className=" w-full hover:shadow-inner rounded-full p-2 outline-none"
+                    type="email"
+                    name="email"
+                    placeholder="email"
+                    value={data.email}
+                    onChange={handleChange}
+                  />
+                </div>
+                <div>
+                  <input
+                    className=" hover:shadow-inner rounded-full p-2 w-full outline-none"
+                    type="password"
+                    placeholder="password"
+                    name="password"
+                    value={data.password}
+                    onChange={handleChange}
+                  />
+                </div>
               </div>
               {/* {status === "authenticated" ? ( <button onClick={() => signOut ({ callbackUrl: "/"})}> logout</button> )} */}
-              <button className="w-full text-white p y-2 my-4 bg-slate-700  hover:bg-slate-600 rounded-full">
+              <button className="w-full mt-10 text-white p- y-2 my-4 bg-slate-700  hover:bg-slate-600 rounded-full">
                 Login
               </button>
-              <p className="text-violet-500 cursor-pointer">
+              <p className="text-violet-500  cursor-pointer">
                 Remind me <input className="text-pink-500 " type="checkBox" />
               </p>
 

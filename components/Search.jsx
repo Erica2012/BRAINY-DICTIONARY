@@ -18,16 +18,15 @@ const Search = ({setWord}) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="max-w-sm mx-auto border mt-10 border-pink-500 px-2 py-1 rounded-full flex">
-      
+      <div className="max-w-sm mx-auto bg-white dark:bg-slate-400 border mt-10 border-purple-500 px-2 py-1 rounded-full flex">
         <input
-          className="w-full outline-none px-2 text-gray-700  text-xl"
+          className="w-full outline-none px-2 bg-white text-slate-400 dark:bg-slate-400 dark:text-white text-xl"
           type="search"
           name="search"
           onChange={(e) => setInputWord(e.target.value)}
         />
         <button
-          className="bg-pink-500  text-white font-bold py-1 px-4 rounded-full"
+          className=" bg-regal-blue text-white font-bold py-1 px-4 rounded-full"
           type="submit"
         >
           Search

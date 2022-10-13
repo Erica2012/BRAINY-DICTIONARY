@@ -5,9 +5,7 @@ const Layout = ({ children }) => {
   return (
     <div className=" flex flex-row justify-start">
       <Sidebar />
-      <div className="flex">
-        {children}
-      </div>
+      <div className="flex ml-20 ">{children}</div>
     </div>
   );
 };

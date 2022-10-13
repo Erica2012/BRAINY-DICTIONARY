@@ -41,7 +41,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
 
   return (
     <div
-      className={`fixed h-screen  top-0 left-0 text-slate-500 shadow-lg py-5 ${
+      className={`fixed h-screen  mt-auto left-0 text-slate-500 shadow-lg  ${
         sidebarOpen ? "w-48" : "w-20"
       } duration-300`}
     >
