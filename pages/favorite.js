@@ -43,7 +43,10 @@ const Favorite = () => {
                 //   <Meaning key={idx} meaning={{ item, key: idx }} />
                 // </div>
 
-                <div className="py-3 sm:py-4 border-b border-slate-100 ">
+                <div
+                  key={idx}
+                  className="py-3 sm:py-4 border-b border-slate-100 "
+                >
                   <div className="flex items-center space-x-4">
                     <div className="flex-shrink-0">
                       <img

@@ -60,14 +60,16 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         </div>
         <div className="space-y-5">
           {menuItems.map((menu, id) => (
-            <Link href={menu.link} key={id}>
-              <div className="flex items-center space-x-3 cursor-pointer  hover:text-[#EACE6A] hover:scale-110 duration-200">
-                <span className="text-3xl">
-                  {React.createElement(menu.icon)}
-                </span>
-                {sidebarOpen && <span>{menu.label}</span>}
-              </div>
-            </Link>
+            <React.Fragment key={id}>
+              <Link href={menu.link}>
+                <div className="flex items-center space-x-3 cursor-pointer  hover:text-[#EACE6A] hover:scale-110 duration-200">
+                  <span className="text-3xl">
+                    {React.createElement(menu.icon)}
+                  </span>
+                  {sidebarOpen && <span>{menu.label}</span>}
+                </div>
+              </Link>
+            </React.Fragment>
           ))}
         </div>
         <div className="flex items-center space-x-2 cursor-pointer hover:text-[#EACE6A] hover:scale-110 duration-200">
