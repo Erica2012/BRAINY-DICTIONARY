@@ -60,7 +60,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
         </div>
         <div className="space-y-5">
           {menuItems.map((menu, id) => (
-            <React.Fragment key={id}>
+            <React.Fragment key={menu.id}>
               <Link href={menu.link}>
                 <div className="flex items-center space-x-3 cursor-pointer  hover:text-[#EACE6A] hover:scale-110 duration-200">
                   <span className="text-3xl">
