@@ -6,7 +6,7 @@ import Image from "next/image";
 import woman7a from "../public/images/woman7a.png";
 import { BsHeartFill } from "react-icons/bs";
 import Meaning from "../components/Meaning";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 
 const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
   const { status } = useSession();

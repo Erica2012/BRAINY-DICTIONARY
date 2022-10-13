@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Navbar from "../components/navbar";
+import Navbar from "../components/Navbar";
 import Search from "../components/Search";
 import bookBg from "../public/images/bookBg.png";
 // import newbg1 from "../public/images/newbg1.jpg";
