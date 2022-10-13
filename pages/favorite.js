@@ -10,11 +10,15 @@ const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
   const router = useRouter();
   const [list, setList] = useState([]);
 
-  useEffect(() => {
-    if (status !== "authenticated") {
-      router.push("/login");
-    }
-  }, [status]);
+  useEffect(
+    () => {
+      if (status !== "authenticated") {
+        router.push("/login");
+      }
+    },
+    [status],
+    router
+  );
 
   useEffect(() => {
     if (localStorage.getItem("favourite")) {
@@ -44,10 +48,6 @@ const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
               </div>
               <div className="flow-root">
                 {list?.map((item, idx) => (
-                  // <div key={idx}>
-                  //   <Meaning key={idx} meaning={{ item, key: idx }} />
-                  // </div>
-
                   <div
                     key={idx}
                     className="py-3 sm:py-4 border-b border-slate-100 "
@@ -56,7 +56,6 @@ const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
                       <div className="flex-shrink-0">
                         <Image
                           className="w-8 h-8 rounded-full"
-                          // src="https://flowbite.com/docs/images/people/profile-picture-1.jpg"
                           src="/images/newbg35.jpg"
                           alt="Neil image"
                         />
@@ -89,7 +88,6 @@ const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
           </div>
         </div>
       </div>
-      //{" "}
     </div>
   );
 };
