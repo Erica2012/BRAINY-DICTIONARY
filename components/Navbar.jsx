@@ -41,9 +41,9 @@ const Navbar = () => {
   console.log(status);
 
   return (
-    <nav>
-      <div className="py-0 top-0 z-50 bg-white">
-        <div className="flex items-center justify-between bg-white dark:bg-regal-blue h-16  ">
+    <nav className="sticky">
+      <div className="py-0 top-0 z-50 bg-white ">
+        <div className="flex items-center justify-between bg-gradient-to-r from-gray-100 via-purple-400 to-gray-100 dark:bg-gradient-to-r from-slate-200 via-regal-blue to-gray-100 h-16  ">
           {/* //navbar items */}
           <div className="">
             <div className="flex md-8 items-center">

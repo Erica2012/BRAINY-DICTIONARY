@@ -6,8 +6,9 @@ import Image from "next/image";
 import woman7a from "../public/images/woman7a.png";
 import { BsHeartFill } from "react-icons/bs";
 import Meaning from "../components/Meaning";
+import Navbar from "../components/navbar";
 
-const Favorite = () => {
+const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
   const { status } = useSession();
   const router = useRouter();
   const [list, setList] = useState([]);
@@ -17,6 +18,7 @@ const Favorite = () => {
   //     router.push("/login");
   //   }
   // }, [status]);
+
   useEffect(() => {
     if (localStorage.getItem("favourite")) {
       let existingWords = localStorage.getItem("favourite");
@@ -27,10 +29,16 @@ const Favorite = () => {
   }, []);
 
   return (
-    <Layout>
-      <div className=" relative px-12 bg-no-repeat origin-right w-full h-screen bg-opacity-25 min-w-screen">
-        <div className="max-w-2xl mx-auto">
-          <div className="p-4 max-w-md bg-white rounded-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+    // <div className={`${sidebarOpen ? "ml-48" : "ml-20"} duration-300`}>
+    //   <div>
+    //     <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
+    //   </div>
+    <div>
+      <Navbar />
+
+      <div className=" relative grid grid-cols-2 px-12  bg-purple-400 bg-no-repeat origin-right w-full h-screen bg-opacity-25 min-w-screen">
+        <div className="max-w-2xl mx-auto mt-16 ">
+          <div className=" w-96 max-w-md bg-white rounded-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
                 Favorite List
@@ -73,9 +81,20 @@ const Favorite = () => {
             </div>
           </div>
         </div>
+        <div className=" mt-52 px-2  ml-20 ">
+          <Image
+            className="relative w-32 h-24"
+            src="/images/woman7a.png "
+            alt=""
+            width={400}
+            height={300}
+          />
+        </div>
       </div>
-    </Layout>
+    </div>
+    // </div>
   );
 };
+
 
 export default Favorite;

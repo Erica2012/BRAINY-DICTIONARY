@@ -51,7 +51,7 @@ const Sidebar = ({ sidebarOpen, setSidebarOpen }) => {
       >
         {sidebarOpen ? <VscChromeClose /> : <VscThreeBars />}
       </div>
-      <div className="flex flex-col items-start pl-5 justify-between h-full bg-slate-300">
+      <div className="flex flex-col items-start pl-5 justify-between h-full dark:bg-regal">
         <div className="flex items-center w-full space-x-2 cursor-pointer hover:text-[#EACE6A] hover:scale-110 duration-200">
           <span className="text-3xl">
             <BsFillJournalBookmarkFill />
