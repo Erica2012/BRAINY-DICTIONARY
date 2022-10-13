@@ -48,7 +48,7 @@ const MeaningList = ({ word }) => {
           <div className=" flex items-center justify-center bg-slate-100 dark:bg-regal-blue mr-4 min-h-[50vh]">
             {/* <Image src="/images/results.svg" width={300} height={200} /> */}
             <h1 class="text-slate-900 font-extrabold dark:font-serif sm:text-5xl lg:text-6xl text-sm tracking-tight text-center dark:text-white">
-              Find the  meaning of any word by typing the preferred word In the
+              Find the meaning of any word by typing the preferred word In the
               Search Box
             </h1>
           </div>
@@ -84,11 +84,8 @@ const MeaningList = ({ word }) => {
           </div>
         )}
         {word?.map((item, idx) => (
-          <div >
-            <Meaning
-              key={idx}
-              meaning={{ item, key: idx }}
-            />
+          <div key={idx}>
+            <Meaning key={idx} meaning={{ item, key: idx }} />
           </div>
         ))}
       </div>

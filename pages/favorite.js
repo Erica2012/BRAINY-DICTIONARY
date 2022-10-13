@@ -39,7 +39,7 @@ const Favorite = () => {
             </div>
             <div className="flow-root">
               {list?.map((item, idx) => (
-                // <div>
+                // <div key={idx}>
                 //   <Meaning key={idx} meaning={{ item, key: idx }} />
                 // </div>
 
