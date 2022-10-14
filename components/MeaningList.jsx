@@ -32,7 +32,7 @@ const MeaningList = ({ word }) => {
   return (
     <div className="max-w-4xl mx-auto pl-16">
       <div className=" my-5">
-        {word.length <= 0 && (
+        {word <= 0 && (
           <div className=" flex items-center justify-center bg-slate-100 dark:bg-regal-blue mr-4 min-h-[50vh]">
             <h1 class="text-slate-900 font-extrabold dark:font-serif sm:text-5xl lg:text-6xl text-sm tracking-tight text-center dark:text-white">
               Find the meaning of any word by typing the preferred word In the
@@ -42,9 +42,9 @@ const MeaningList = ({ word }) => {
         )}
         <div className="flex justify-center  dark:bg-transparent items-end gap-5">
           <h1 className="text-4xl mt-5 font-semibold text-gray-600 dark:text-white">
-            {word.length > 0 && word[0].word}
+            {word > 0 && word[0].word}
             <small className="text-blueGreen text-2xl">
-              {word.length > 0 && word[0].phonetic}
+              {word > 0 && word[0].phonetic}
             </small>
           </h1>
         </div>
@@ -52,7 +52,7 @@ const MeaningList = ({ word }) => {
       </div>
 
       <div className="mt-3 text-left text-lg  ">
-        {word.length > 0 && (
+        {word > 0 && (
           <div className="flex items-center pb-4 ">
             <h2 className=" pr-3 inline text-left text-2xl font-semibold text-gray-600 dark:text-white">
               Definition

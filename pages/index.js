@@ -1,4 +1,4 @@
-import Layout from '../components/layout';
+import Layout from '../components/Layout';
 import Dashboarduser from "./dashboarduser"
 
 export default function Home() {

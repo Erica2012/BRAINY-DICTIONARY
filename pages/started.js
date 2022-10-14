@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Layout from "../components/layout"
+import Layout from "../components/Layout"
 import Flip from 'react-reveal/Flip';
 
 
