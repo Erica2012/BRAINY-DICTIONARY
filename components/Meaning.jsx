@@ -1,20 +1,17 @@
-import React from "react";
+import React from 'react';
 
 const Meaning = ({ meaning: { item, key } }) => {
   return (
     <div
       className={`mb-2 p-3 mr-5 ${
         key % 2 === 0
-          ? "bg-slate-100 dark:bg-slate-300 dark:text-slate-600"
-          : ""
+          ? 'bg-slate-100 dark:bg-slate-300 dark:text-slate-600'
+          : ''
       }`}
     >
       {item.meanings.map((meaning, idx) => (
         <div key={idx}>
-          {/* Part of Speech */}
           <p className="text-2xl italic mb-1">{meaning.partOfSpeech}</p>
-
-          {/* Definitions */}
           <div className="pl-10 mb-5  dark:bg-slate-300 dark:text-slate-600">
             <ol className="list-decimal space-y-2">
               {meaning.definitions.map((definition, idx) => (
@@ -29,9 +26,6 @@ const Meaning = ({ meaning: { item, key } }) => {
               ))}
             </ol>
           </div>
-
-          {/* Synonyms  */}
-
           {meaning.synonyms.length > 0 && (
             <>
               <h3 className="my-1 italic">Synonyms</h3>
@@ -47,8 +41,6 @@ const Meaning = ({ meaning: { item, key } }) => {
               </div>
             </>
           )}
-
-          {/* Antonyms  */}
           {meaning.antonyms.length > 0 && (
             <>
               <h3 className="my-1 italic">Antonyms</h3>

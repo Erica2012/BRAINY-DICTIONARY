@@ -3,9 +3,10 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { BsHeartFill } from "react-icons/bs";
-import Navbar from "../components/Navbar";
+import Layout from "../components/layout";
+import Rotate from 'react-reveal';
 
-const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
+const Favorite = () => {
   const { status } = useSession();
   const router = useRouter();
   const [list, setList] = useState([]);
@@ -30,16 +31,15 @@ const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
   }, []);
 
   return (
-    <div className={`${sidebarOpen ? "ml-48" : "ml-20"} duration-300`}>
-      <div>
-        <Navbar sidebarOpen={sidebarOpen} setSidebarOpen={setSidebarOpen} />
-      </div>
-      <div>
-        <Navbar />
 
-        <div className=" relative grid grid-cols-2 px-12  bg-purple-400 bg-no-repeat origin-right w-full h-screen bg-opacity-25 min-w-screen">
-          <div className="max-w-2xl mx-auto mt-16 ">
-            <div className=" w-96 max-w-md bg-white rounded-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
+
+    <Layout title={'favorite'}>
+
+
+      <div className=" relative grid grid-cols-2 px-12  bg-purple-400 bg-no-repeat origin-right w-full h-screen bg-opacity-25 min-w-screen">
+        <div className="max-w-2xl mx-auto mt-16 ">
+          <Rotate top right >
+            <div className=" w-[500px] max-w-md bg-white rounded-lg sm:p-8 dark:bg-gray-800 dark:border-gray-700">
               <div className="flex justify-between items-center mb-4">
                 <h3 className="text-xl font-bold leading-none text-gray-900 dark:text-white">
                   Favorite List
@@ -58,6 +58,8 @@ const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
                           className="w-8 h-8 rounded-full"
                           src="/images/newbg35.jpg"
                           alt="Neil image"
+                          width={60}
+                          height={60}
                         />
                       </div>
                       <div className="flex-1 min-w-0">
@@ -76,8 +78,10 @@ const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
                 ))}
               </div>
             </div>
-          </div>
-          <div className=" mt-52 px-2  ml-20 ">
+          </Rotate>
+        </div>
+        <div className=" mt-52 px-2  ml-20 ">
+          <Rotate top left>
             <Image
               className="relative w-32 h-24"
               src="/images/woman7a.png "
@@ -85,10 +89,12 @@ const Favorite = ({ sidebarOpen, setSidebarOpen }) => {
               width={400}
               height={300}
             />
-          </div>
+          </Rotate>
+
         </div>
       </div>
-    </div>
+    </Layout>
+
   );
 };
 

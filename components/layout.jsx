@@ -1,12 +1,24 @@
+import Head from 'next/head';
 import React from 'react';
-import Sidebar from './Sidebar';
+import Navbar from './Navbar';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, title }) => {
   return (
-    <div className=" flex flex-row justify-start">
-      <Sidebar />
-      <div className="flex ml-20 ">{children}</div>
-    </div>
+    <>
+      <Head>
+        <title>
+          {title ? title + ' - Brainy Dictionary' : 'Brainy Dictionary'}
+        </title>
+        <meta name="description" content="Open Dictionary Web App" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+      <div className="flex min-h-screen flex-col justify-between">
+        <header>
+          <Navbar />
+        </header>
+        <main className="">{children}</main>
+      </div>
+    </>
   );
 };
 

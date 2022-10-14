@@ -1,21 +1,16 @@
 import React, { FormEvent, useState } from "react";
 
 const Search = ({setWord}) => {
-  // const [searchWord, setSearchWord] = useState("");
   const [inputWord, setInputWord] = useState("")
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    // setSearchWord(word)
-    
+    e.preventDefault();  
     const res = await fetch(
       `https://api.dictionaryapi.dev/api/v2/entries/en/${inputWord}`
       );
       const data = await res.json();
       setWord(data);
   };
-
-
   return (
     <form onSubmit={handleSubmit}>
       <div className="max-w-sm mx-auto bg-white dark:bg-slate-400 border mt-10 border-purple-500 px-2 py-1 rounded-full flex">

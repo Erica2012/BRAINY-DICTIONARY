@@ -1,52 +1,39 @@
-import axios from "axios";
-import Image from "next/image";
-import React, { useEffect, useState } from "react";
-import { BsHeart, BsHeartFill } from "react-icons/bs";
-// import { Howl } from "howler";
+import React, { useEffect, useState } from 'react';
+import { BsHeart, BsHeartFill } from 'react-icons/bs';
 
-import Meaning from "../components/Meaning";
+import Meaning from '../components/Meaning';
 
 const MeaningList = ({ word }) => {
   const [liked, setLiked] = useState(false);
 
   const handleOnClick = (savedWord) => {
     setLiked(!liked);
-    console.log("savedword", savedWord);
-    // 1.check if liked is true or false
+    console.log('savedword', savedWord);
     if (!liked) {
-      // 2. if true we've save to localStorage
-      // 2a. check if favourite variable exist, and update it with the new word
-      if (localStorage.getItem("favourite")) {
-        let existingWords = localStorage.getItem("favourite");
+      if (localStorage.getItem('favourite')) {
+        let existingWords = localStorage.getItem('favourite');
         existingWords = JSON.parse(existingWords);
-        console.log("savedword", savedWord);
+        console.log('savedword', savedWord);
         if (existingWords.find((el) => el[0][0]?.word === savedWord[0]?.word)) {
-          console.log("...found");
-          
+          console.log('...found');
+
           return;
         } else {
           existingWords = [...existingWords, savedWord];
           existingWords = JSON.stringify(existingWords);
-          localStorage.setItem("favourite", existingWords);
+          localStorage.setItem('favourite', existingWords);
         }
       } else {
-        // 2b. if not create a new storage variable and save word into it
-        localStorage.setItem("favourite", JSON.stringify([savedWord]));
+        localStorage.setItem('favourite', JSON.stringify([savedWord]));
       }
     } else {
-      // 3, If false we check if item is already saved in localStorage and remove it
     }
   };
-  // const toggleFavourite = async () => {
-  //   const res = await axios.post(`${process.env.NEXT_PUBLIC_BASE_URL}/api/user/add-favourite`)
-  // }
-
   return (
     <div className="max-w-4xl mx-auto pl-16">
       <div className=" my-5">
         {word.length <= 0 && (
           <div className=" flex items-center justify-center bg-slate-100 dark:bg-regal-blue mr-4 min-h-[50vh]">
-            {/* <Image src="/images/results.svg" width={300} height={200} /> */}
             <h1 class="text-slate-900 font-extrabold dark:font-serif sm:text-5xl lg:text-6xl text-sm tracking-tight text-center dark:text-white">
               Find the meaning of any word by typing the preferred word In the
               Search Box

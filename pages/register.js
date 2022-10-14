@@ -1,11 +1,11 @@
 import React from "react";
 import Image from "next/image";
-import newbg1 from "../public/images/newbg1.jpg";
 import { FcGoogle } from "react-icons/fc";
 import { BsFacebook } from "react-icons/bs";
 import { useState } from "react";
-import  axios from "axios"
+import axios from "axios"
 import { useRouter } from "next/router";
+import { Zoom } from "react-reveal";
 
 const Signup = () => {
   const [data, setData] = useState({
@@ -34,85 +34,86 @@ const Signup = () => {
 
   return (
     <div>
-      <div
-        className="relative w-full h-screen bg-cover bg-no-repeat "
-        style={{
-          backgroundImage: `url(${newbg1.src})`,
-        }}
-      >
-        <div className="grid grid-col-1 rounded-tl-none rounded-3xl  md:grid-cols-2 m-auto h-[550px] shadow-lg shadow-violet-500 bg-transparent sm:max-w-[900px] ">
-          <div className="hidden md:block mt-7 bg-transparent">
+      <div className="min-h-screen flex bg-white/5 justify-center items-center bg-slate-300 dark:bg-slate-700  ">
+        <div className="hidden mt-7 md:block bg-transparent">
+          <Zoom top>
             <Image src="/images/loginNew.png" alt="" width={600} height={600} />
-          </div>
-          <div className="p-4 flex mt-6 rounded-r-3xl  flex-col justify-center border shadow-sm bg-white ">
-            <form className="  " onSubmit={handleSubmit}>
-              <h2 className="text-4xl font-bold text-center mb-8 text-yellow-400">Register</h2>
-              {error && (
-                <span className="text-center text-sm text-red-500">
-                  {error}
-                </span>
-              )}
-              <div className="flex flex-col space-y-2">
-                <input
-                  className=" w-full outline-none hover:shadow-inner rounded-full p-2"
-                  type="text"
-                  name="firstName"
-                  placeholder="firstname"
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <input
-                  className="w-full outline-none hover:shadow-inner rounded-full p-2 "
-                  type="text"
-                  placeholder="lastname"
-                  name="lastName"
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <input
-                  className="w-full hover:shadow-inner rounded-full p-2 outline-none "
-                  type="email"
-                  name="email"
-                  placeholder="email"
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <input
-                  className=" w-full hover:shadow-inner rounded-full p-2 outline-none "
-                  type="password"
-                  name="password"
-                  placeholder="password"
-                  onChange={handleChange}
-                />
-              </div>
-              <div>
-                <input
-                  className="w-full hover:shadow-inner rounded-full p-2 outline-none "
-                  type="password"
-                  name="confirmPassword"
-                  placeholder="confirm password"
-                  onChange={handleChange}
-                />
-              </div>
+          </Zoom>
+        </div>
+        <div className="md:w-1/3 bg-white dark:bg-regal-blue  p-6 rounded-lg shadow-2xl  outline outline-violet-200 shadow-pink-500 dark:shadow-violet-500 ">
 
-              <button className="w-full text-white p y-2 my-4 bg-slate-700  hover:bg-slate-600 rounded-full">
-                Register
-              </button>
-              <div className="flex flex-row justify-around text-violet-700">
-                <p>Register with 👉</p>
-                <p>
-                  <BsFacebook />
-                  Facebook
-                </p>
-                <p>
-                  <FcGoogle />
-                  Google
-                </p>
-              </div>
-            </form>
+          <div className="p-3  mt-6 flex flex-col rounded-r-3xl  dark:bg-regal-blue   border shadow-sm  bg-white ">
+            <Zoom bottom>
+              <form onSubmit={handleSubmit}
+                className='flex flex-col space-y-4 py-2 '>
+                {error && <p>{error}</p>}
+                <h2 className="text-4xl font-bold text-center mb-8 text-yellow-500">
+                  Register
+                </h2>
+                <div className="space-y-5">
+                  <div className="flex flex-col space-y-2">
+                    <input
+                      className=" w-full hover:shadow-inner rounded-full p-2 outline-none text-slate-600 bg-slate-100 dark:bg-slate-100"
+                      type="text"
+                      name="firstName"
+                      placeholder="firstname"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className=" w-full hover:shadow-inner rounded-full p-2 outline-none text-slate-600 bg-slate-100 dark:bg-slate-100"
+                      type="text"
+                      placeholder="lastname"
+                      name="lastName"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className=" w-full hover:shadow-inner rounded-full p-2 outline-none text-slate-600 bg-slate-100 dark:bg-slate-100"
+                      type="email"
+                      name="email"
+                      placeholder="email"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className=" w-full hover:shadow-inner rounded-full p-2 outline-none text-slate-600 bg-slate-100 dark:bg-slate-100"
+                      type="password"
+                      name="password"
+                      placeholder="password"
+                      onChange={handleChange}
+                    />
+                  </div>
+                  <div>
+                    <input
+                      className=" w-full hover:shadow-inner rounded-full p-2 outline-none text-slate-600 bg-slate-100 dark:bg-slate-100"
+                      type="password"
+                      name="confirmPassword"
+                      placeholder="confirm password"
+                      onChange={handleChange}
+                    />
+                  </div>
+                </div>
+                <button className="w-full mt-10 text-white text-xl my-4 bg-slate-400  hover:bg-slate-600 rounded-full">
+                  Register
+                </button>
+
+                <div className="flex flex-row justify-around text-white">
+                  <p>Register with 👉</p>
+                  <p>
+                    <BsFacebook />
+                    Facebook
+                  </p>
+                  <p>
+                    <FcGoogle />
+                    Google
+                  </p>
+                </div>
+              </form>
+            </Zoom>
           </div>
         </div>
       </div>
